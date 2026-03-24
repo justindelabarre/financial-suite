@@ -44,8 +44,8 @@ def sentiment_node(state: AgentState) -> AgentState:
 - PE Ratio : {fundamentals.get('pe_ratio')}
 - Forward PE : {fundamentals.get('forward_pe')}
 - Market Cap : {fundamentals.get('market_cap')}
-- Marge nette : {fundamentals.get('profit_margin')}
-- ROE : {fundamentals.get('roe')}
+- Marge nette : {round(fundamentals.get('profit_margin') * 100, 2) if fundamentals.get('profit_margin') else 'N/A'}%
+- ROE : {round(fundamentals.get('roe') * 100, 2) if fundamentals.get('roe') else 'N/A'}%
 - Recommandation analystes : {fundamentals.get('recommendation')}
 - Prix cible moyen : {fundamentals.get('analyst_target')}
 
